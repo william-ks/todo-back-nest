@@ -1,7 +1,7 @@
-import { IUserRepository } from "../../repositories/IUserRepository";
+import { IUserRepository } from "../../../repositories/IUserRepository";
 import { Injectable } from "@nestjs/common";
 import { ICreateUserDTO } from "./create-user.dto";
-import { IHandlePassword } from "../../providers/IHandlePassword";
+import { IHandlePassword } from "../../../providers/IHandlePassword";
 
 @Injectable()
 export class CreateUserService {
@@ -21,7 +21,7 @@ export class CreateUserService {
     if (alreadyExists) {
       throw {
         statusCode: 400,
-        message: "Email already exists.",
+        customMessage: "Email already exists.",
       };
     }
 
