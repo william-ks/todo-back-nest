@@ -18,8 +18,8 @@ export class CreateUserController {
     } catch (error) {
       console.log(error);
       return res
-        .status(HttpStatus.INTERNAL_SERVER_ERROR)
-        .json({ error: "Internal Server Error" });
+        .status(error.statusCode || HttpStatus.INTERNAL_SERVER_ERROR)
+        .json({ error: error.customMessage || "Internal Server Error" });
     }
   }
 }

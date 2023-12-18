@@ -1,8 +1,9 @@
 import { Module } from "@nestjs/common";
-import { CreateUserModule } from "./api/use-cases/create-user/create-user.module";
+import { CreateUserModule } from "./api/use-cases/user/create-user/create-user.module";
+import { PrismaGlobalModule } from "./config/prisma/prisma-global.module";
 
 @Module({
-  imports: [CreateUserModule],
+  imports: [PrismaGlobalModule, CreateUserModule],
   controllers: [],
   providers: [],
 })
