@@ -1,4 +1,4 @@
-import { Catch, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import * as jwt from "jsonwebtoken";
 import { IHandleToken } from "../IHandleTokens";
 
